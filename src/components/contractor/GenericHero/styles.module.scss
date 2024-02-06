@@ -1,0 +1,30 @@
+@import "src/styles/mixins";
+
+.arrowWrapper {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  margin-left: -28px;
+  color: white;
+  font-size: 64px;
+  animation-delay: 3s;
+  animation-name: bounce-6;
+  animation-timing-function: ease;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+
+  @include break-on('small') {
+    display: none;
+  }
+}
+
+@keyframes bounce-6 {
+  0%   { transform: translateY(0); }
+  10%  { transform: translateY(0); }
+  30%  { transform: translateY(-20px); }
+  50%  { transform: translateY(0); }
+  57%  { transform: translateY(-6px); }
+  64%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}

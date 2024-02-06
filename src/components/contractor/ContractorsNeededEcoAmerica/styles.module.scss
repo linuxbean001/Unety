@@ -1,0 +1,39 @@
+.layout {
+  position: relative;
+  z-index: 9;
+  background: #fff;
+  backface-visibility: hidden;
+}
+
+.well {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 8px;
+
+  :global(.contractor-signup__tools__title) {
+    margin-bottom: 40px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  :global(.contractor-signup__tools) {
+    padding-top: unset;
+    padding-bottom: unset;
+  }
+}
+
+.logos {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+
+  > * {
+    margin: 24px;
+  }
+
+  img {
+    height: 80px;
+  }
+}

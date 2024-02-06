@@ -1,0 +1,14 @@
+@import "../../styles/mixins";
+
+.up-testimonials-block {
+  @include container;
+
+  &__slider {
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include title;
+  }
+}

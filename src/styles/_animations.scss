@@ -1,0 +1,42 @@
+@import "mixins";
+
+$movement-amount: 40px;
+
+.transition-opacity {
+  @include transition;
+  opacity: 0;
+  transform: translateY($movement-amount);
+}
+
+.transition-slide-in {
+  &> *:first-child {
+    @include transition;
+    transform: translateX(-$movement-amount);
+    opacity: 0
+  }
+  &> *:last-child {
+    @include transition;
+    transform: translateX($movement-amount);
+    opacity: 0
+  }
+}
+
+.animate-container--in {
+  .transition-opacity {
+    opacity: 1;
+    transform: none;
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        transition-delay: 0.15s * $i;
+      }
+    }
+  }
+
+  .transition-slide-in {
+    &> * {
+      transform: none;
+      opacity: 1
+    }
+  }
+}

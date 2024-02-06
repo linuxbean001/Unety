@@ -1,0 +1,104 @@
+@import "../../../styles/mixins";
+
+.item {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  @include break-on('small') {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+
+  &:last-child{
+    border-bottom: none;
+  }
+
+  .itemBio {
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    @include break-on('small') {
+      margin-top: 16px;
+    }
+  }
+
+  .itemContent {
+    display: flex;
+  }
+
+  .itemImage {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: $gutter-2;
+  }
+
+  .itemInfo {
+    margin-right: $gutter-4;
+    width: 200px;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .itemName {
+    @include body-copy;
+    text-align: center;
+
+    @include break-on('small') {
+      margin-bottom: $gutter-2;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  .itemSocial {
+    display: flex;
+    justify-content: center;
+    margin-left: -3px;
+
+    a {
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin-left: $gutter-1;
+
+      &:first-child {
+        margin-left:0;
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .itemTitle {
+    @include title;
+  }
+}
+
+.readBio {
+  font-size: 14px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

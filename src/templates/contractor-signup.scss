@@ -1,0 +1,367 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.contractor-signup {
+  font-family: 'Open Sans', sans-serif;
+
+  section {
+    position: relative;
+    z-index: 9;
+    background: #fff;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg,rgba(123,22,26,.8) 3%,rgba(153,51,51,.8) 50%,rgba(123,22,26,.8) 97%);
+      z-index: 2;
+    }
+  }
+
+  &__hero {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    max-height: 750px;
+
+    @include break-on('small') {
+      height: auto;
+      max-height: 100000px;
+    }
+  }
+
+  &__hero, &__dont-wait {
+    @include container;
+    position: relative;
+    z-index: 9;
+    background: transparent !important;
+
+    &__copy {
+      color: #fff;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+    }
+
+    &__form {
+      align-self: center;
+    }
+
+    &__inner {
+      max-width: 960px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(100px, 1fr));
+      grid-gap: $gutter-4;
+      margin-top: 0;
+      padding-top: $gutter-8;
+      padding-bottom: $gutter-8;
+
+      @include break-on('small') {
+        grid-template-columns: minmax(100px, 1fr);
+        max-width: 450px;
+        margin-top: 0;
+      }
+
+    }
+
+    &__logo {
+      width: 190px;
+      margin-bottom: $gutter-4;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__title {
+      text-align: left;
+      margin-bottom: $gutter-2;
+      font-size: 56px;
+      line-height: 60px;
+    }
+
+    p {
+      color: #fff;
+      font-size: 26px;
+       line-height: 32px;
+    }
+  }
+
+  &__dont-wait {
+    background: #fff !important;
+    padding-bottom: $gutter-8;
+
+    &__copy {
+      color: #000;
+      align-self: center;
+    }
+
+    &__form {
+      .contractor-signup-form {
+        @include break-on('small', true) {
+          box-shadow: none;
+        }
+      }
+    }
+
+    &__inner {
+      margin-top: 0;
+      padding-top: $gutter-8;
+      grid-gap: $gutter-6;
+    }
+
+    &__title {
+      font-weight: 300;
+      font-size: 50px;
+      line-height: 65px;
+    }
+
+    p {
+      color: #000;
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  &__footer {
+    @include container;
+    background: #fff;
+    position: relative;
+    z-index: 9;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    &__copy {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+
+      span {
+        padding-right: $gutter-2;
+      }
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &__logo {
+      width: 130px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0;
+      border-top: solid 1px #ddd;
+      max-width: 960px;
+    }
+  }
+
+  &__project-types {
+    @include container;
+    padding-bottom: $gutter-9;
+
+    @include break-on('medium') {
+      padding-bottom: 0;
+    }
+
+
+    &__actions {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: $gutter-10;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__cta {
+      @include cta;
+      width: fit-content;
+    }
+
+    &__description {
+      @include transition;
+      @include body-copy;
+      display: block;
+      color: #555555;
+      margin-bottom: 0;
+      position: absolute;
+      background: rgba(#fff, 0.9);
+      border: solid 1px $brand-primary-dark;
+      padding: $gutter-2;
+      font-size: 14px;
+      top: -20px;
+      width: 200%;
+      left: 50%;
+      transform: translate(-50%, 10px);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+
+      @include break-on('medium') {
+        width: 100%;
+      }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
+      grid-column-gap: $gutter-4;
+      grid-row-gap: $gutter-7;
+      max-width: 600px;
+      margin: 0 auto;
+
+      @include break-on('small') {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+      }
+    }
+
+    &__image {
+      width: 80px;
+      height: 80px;
+
+      .gatsby-image-wrapper, .gatsby-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain !important;
+      }
+    }
+
+    &__inner {
+      //@include heroOverlap;
+      padding-top: $gutter-7;
+      padding-bottom: $gutter-7;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      @include break-on('small') {
+        max-width: 450px;
+      }
+    }
+
+    &__item {
+      align-self: end;
+      position: relative;
+
+      &:hover {
+        .up-homepage__project-types__description {
+          opacity: 1;
+          transform: translate(-50%, 0px);
+        }
+      }
+
+      @include break-on('medium') {
+        &:last-child {
+          transition-delay: 0s;
+        }
+      }
+
+      @include break-on('small') {
+        &:last-child {
+          transform: translateX(0);
+          display: none;
+        }
+      }
+    }
+
+    &__subtitle {
+      @include subTitle;
+    }
+
+    &__title {
+      @include title;
+
+      @include break-on('small') {
+        margin-bottom: $gutter-8;
+      }
+    }
+  }
+
+  &__tools {
+    @include container;
+    padding-top: $gutter-10;
+    padding-bottom: $gutter-7;
+
+    &__inner {
+      max-width: 960px;
+      margin-top: 0;
+    }
+
+   &__item {
+     display: grid;
+     grid-template-columns: repeat(2, minmax(100px, 1fr));
+     grid-gap: $gutter-6;
+     padding-bottom: $gutter-4;
+
+    &:nth-child(even) {
+      .contractor-signup__tools__item__image {
+        order: 1;
+      }
+    }
+
+     @include break-on('small') {
+       max-width: 450px;
+       display: flex;
+       flex-direction: column-reverse;
+       margin: 0 auto;
+     }
+
+     &:first-child {
+       padding-bottom: 0;
+
+       .contractor-signup__tools__item__title,
+       .contractor-signup__tools__item__copy {
+         transform: translateY(-20px);
+
+         @include break-on('small') {
+           transform: none;
+         }
+       }
+     }
+
+     &__copy {
+       align-self: center;
+     }
+
+     &__image {
+       width: 100%;
+
+       img {
+         width: 100%;
+       }
+     }
+   }
+    &__title {
+      @include break-on('small') {
+        margin-bottom: $gutter-8;
+      }
+    }
+  }
+}

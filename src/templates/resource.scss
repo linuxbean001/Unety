@@ -1,0 +1,256 @@
+@import "../styles/mixins";
+
+.up-resource {
+  padding-bottom: $gutter-10;
+
+  &__case-studies {
+    @include container;
+
+    &__description {
+      margin-bottom: $gutter-2;
+      padding-bottom: $gutter-2;
+    }
+
+    &__inner {
+      max-width: 900px;
+
+      @include break-on ('small') {
+        margin-top: $gutter-5;
+      }
+    }
+
+    &__item {
+      display: grid;
+      grid-template-columns: 300px minmax(200px, 1fr);
+      grid-gap: $gutter-4;
+
+
+      @include break-on('small') {
+        grid-template-columns: minmax(200px, 1fr);
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      &__asset {
+
+        &__credit {
+          margin-top: $gutter-1;
+          font-style: italic;
+          font-weight: 300;
+          font-size: 13px;
+        }
+      }
+
+      &__title {
+        @include titleUnderline;
+        padding-bottom: $gutter-1;
+        width: fit-content;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: minmax(200px, 1fr);
+      //grid-gap: $gutter-5;
+
+      &> article {
+        padding-top: $gutter-4;
+        padding-bottom: $gutter-3;
+        border-bottom: solid 1px #f3f3f3;
+
+        &:last-child {
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+      }
+    }
+
+    &__title {
+      @include break-on('small') {
+        margin-bottom: 0;
+      }
+    }
+
+    &__energy-savings,
+    &__income-after,
+    &__lifetime-savings,
+    &__project-cost,
+    &__project-size,
+    &__project-type,
+    &__savings {
+      @include body-copy;
+      margin-bottom: 0;
+      span {
+        font-weight: 700;
+        display: inline-block;
+        margin-right: $gutter-1;
+      }
+    }
+  }
+
+  &__hero {
+    @include hero;
+  }
+
+  &__publication {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &__cta {
+      @include cta;
+      width: fit-content;
+    }
+
+    &__image {
+      height: 200px;
+      width: 100%;
+      margin-bottom: $gutter-2;
+
+      .gatsby-image-wrapper, img {
+       width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+      }
+    }
+
+    &__publisher {
+      @include body-copy;
+      margin-bottom: $gutter-2;
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+      word-wrap: break-spaces;
+      margin-bottom: $gutter-2;
+    }
+  }
+
+  &__publications {
+    @include container;
+
+    &__inner {
+      max-width: 1000px;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
+      grid-gap: $gutter-8;
+
+      @include break-on('small') {
+        grid-template-columns:  minmax(200px, 1fr);
+      }
+    }
+  }
+
+  &__video-selection {
+    @include container;
+
+    &--webinar {
+      .up-resource__video-selection__media__item {
+        width: calc(50% - #{$gutter-2});
+
+        @include break-on('small') {
+          width: calc(100% - #{$gutter-2});
+        }
+      }
+    }
+
+    &__description {
+      text-align: center;
+    }
+
+    &__media {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: $gutter-4;
+
+      @include break-on('small') {
+        width: 100%;
+        margin: $gutter-4 auto 0;
+      }
+
+      &__item {
+        width: calc(33% - #{$gutter-2});
+        padding: $gutter-1;
+        background: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include break-on('small') {
+          width: calc(100% - #{$gutter-2});
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &__title {
+        @include titleUnderline;
+        padding-bottom: $gutter-1;
+        font-size: 18px;
+      }
+
+      &__trigger {
+        @include video-popup-button;
+      }
+    }
+
+    &__inner {
+      max-width: 1000px;
+    }
+  }
+
+  &__what-is-it {
+    @include  container;
+
+    &__inner {
+      margin-top: $gutter-8;
+      position: relative;
+      z-index: 99;
+      background: #fff;
+      padding-top: $gutter-5;
+    }
+
+    &__content {
+      @include body-copy;
+      text-align: center;
+    }
+
+    &__inner {
+      max-width: 1000px;
+    }
+
+    &__title {
+      margin-bottom: $gutter-8;
+
+      @include break-on('small') {
+        margin-bottom: $gutter-4;
+      }
+    }
+
+    &__video {
+      @include video-popup-button;
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      display: block;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

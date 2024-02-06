@@ -1,0 +1,139 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.rp-footer {
+  @include container;
+  background: $brand-secondary;
+  color: #FFF;
+  align-self: start;
+  height: 100%;
+
+  &__contact {
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+
+    a {
+      color: #fff;
+    }
+
+    @include break-on('small') {
+      justify-content: space-between;
+      width: 100%;
+
+      .rp-footer__title {
+        display: none;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-left: $gutter-3;
+    font-weight: 300;
+  }
+
+  &__inner {
+    padding: 0 $gutter-2;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    @include break-on('small') {
+      flex-direction: column;
+      padding: $gutter-2;
+      align-items: flex-start;
+      justify-content: space-around;
+    }
+  }
+
+  &__logo {
+    width: 120px;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__name {
+    display: flex;
+    align-items: flex-end;
+
+    @include break-on('small') {
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__nav {
+    justify-self: end;
+    padding-right: $gutter-10 + $gutter-4;
+
+    @include break-on('small') {
+      display: none;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+      ul {
+        padding-left: $gutter-1;
+      }
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      padding: $gutter-1;
+      display: block;
+      font-weight: 300;
+    }
+  }
+
+  &__social {
+    display: flex;
+    margin-left: $gutter-3;
+
+    a {
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin-right: $gutter-1/2;
+      overflow: hidden;
+
+      svg {
+        background: #fff;
+        margin-top: -4px;
+      }
+
+      &:hover {
+        path {
+          fill: $brand-primary
+        }
+      }
+    }
+    path {
+      @include transition;
+      fill: #343434;
+    }
+
+    svg {
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      margin-top: -2px;
+      margin-left: -2px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: $gutter-1;
+    margin-top: $gutter-2;
+  }
+}

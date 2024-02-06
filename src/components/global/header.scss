@@ -1,0 +1,242 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.up-header {
+  @include transition;
+  @include container;
+  color: #FFF;
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  @include break-on('small') {
+    height: auto;
+  }
+
+  &__cta {
+    @include break-on('small') {
+      position: absolute !important;
+      right: $gutter-2;
+      margin-left: auto;
+      transform: translateY(-40px);
+    }
+  }
+
+  &__inner {
+    align-self: center;
+    display: flex;
+    padding: $gutter-2;
+    justify-content: space-between;
+    height: 100%;
+    margin-top: 0;
+
+    @include break-on('small') {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 100%;
+
+    @include break-on('small') {
+      width: 150px;
+      transform: translateY(4px);
+    }
+
+    @include break-on(390px) {
+      width: 120px;
+    }
+
+
+    a {
+      color: #FFF;
+      text-decoration: none;
+      display: block;
+      height: 100%;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+
+    }
+  }
+
+  &__nav {
+    margin-top: -2px;
+
+    @include break-on('small') {
+      margin-top: $gutter-2;
+    }
+
+    & > ul > li {
+      margin-left: $gutter-4;
+
+      &:last-child {
+        margin-left: 0;
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+
+      @include break-on(400px) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    li {
+      margin-bottom: 0;
+      position: relative;
+      padding-bottom: 20px;
+
+      @include break-on('small') {
+        padding-bottom: 0;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      @include break-on(390px) {
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+
+      &:hover .up-header__nav__link--has-children + ul {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(-4px);
+      }
+    }
+
+    &__cta {
+      @include cta-white;
+      margin-left: $gutter-4;
+      margin-top: -2px;
+      padding: $gutter-1 $gutter-2;
+    }
+
+    &__link {
+      display: block;
+      color: #FFF;
+      text-decoration: none;
+      position: relative;
+
+      &:before {
+        @include transition;
+        content: '';
+        width: 0;
+        height: 2px;
+        background: #FFF;
+        display: block;
+        left: 50%;
+        bottom: -$gutter-1;
+        position: absolute;
+        margin-left:0;
+      }
+
+      &:not(.up-header__nav__link--has-children):hover:before, &--current:before {
+        width: 100%;
+        margin-left: -50%;
+      }
+    }
+
+    &__sub-nav {
+      @include transition;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      align-items: flex-end;
+      min-width: 150px;
+      background: #fff;
+      box-shadow:0 1px 4px rgba(0,0,0,0.5);
+      top: 30px;
+      right: -$gutter-2;
+      padding: $gutter-1 $gutter-3 !important;
+      margin-left: 0;
+      border-bottom: solid 3px $brand-primary;
+      transform: translateY($gutter-2);
+      opacity: 0;
+      pointer-events: none;
+
+      @include break-on('small') {
+        right: auto;
+        left: 0;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        right: $gutter-3;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #fff;
+
+        @include break-on('small') {
+          right: auto;
+          left: $gutter-3;
+        }
+      }
+
+      li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 0;
+      }
+
+      .up-header__nav__link {
+        color: #333;
+        margin-left: 0;
+        white-space: nowrap;
+        text-align: center;
+        padding: $gutter-2 0;
+        display: inline-block;
+
+        &:hover:before{
+          width: 100%;
+          margin-left: -50%;
+        }
+
+        &:before {
+          background: $brand-primary;
+          bottom: $gutter-1;
+        }
+      }
+    }
+  }
+
+  &--filled {
+    //background: $brand-secondary;
+    //background: $brand-primary-dark;
+    background: linear-gradient(to bottom, rgba($brand-primary-dark,1) 0%,rgba(lighten($brand-primary-dark, 5%),1) 100%);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  }
+
+  &--stuck {
+    position: fixed;
+  }
+}
+
+
+//------ Aditional CSS -------//
+.mt {
+  margin-top: 0px;
+}

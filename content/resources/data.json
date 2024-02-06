@@ -1,0 +1,254 @@
+[
+  {
+    "articles": {
+      "tag": "pace",
+      "subTitle": "Articles",
+      "title": "Take a deeper dive into PACE"
+    },
+    "caseStudies": {
+      "subTitle": "Case Studies",
+      "title": "Projects funded with PACE",
+      "projects": [
+        {
+          "asset": "pace-restaurant",
+          "description": "<p>Right Proper Brewery produces craft beer for some of the top restaurants and bars in the region. Located in an old warehouse, the brewery installed a new rooftop, a 56-kW rooftop solar PV system, and a 7-kW solar parking canopy with PACE financing.</p>",
+          "incomeAfter": "$11,100",
+          "projectCost": "$230,000",
+          "title": "Restaurant"
+        },
+        {
+          "asset": "pace-hardware-store",
+          "description": "<p>Annie’s ACE Hardware, a local fixture in Washington, D.C.’s Brookland neighborhood, used PACE to finance interior and exterior LED lighting, envelope improvements, a VRF system, and low-flow bathroom fixtures.</p>",
+          "incomeAfter": "$22,000",
+          "projectCost": "$396,000",
+          "title": "Hardware store"
+        },
+        {
+          "asset": "pace-apartment",
+          "description": "<p>Brittany Apartments is owned by a third-generation, family-owned real estate company. The apartment complex used PACE to upgrade its hot water boilers, hot water heaters, storage tanks, and distribution pumps.</p>",
+          "lifetimeSavings": "$121,900",
+          "projectCost": "$530,000",
+          "title": "Apartment"
+        },
+        {
+          "asset": "pace-new-construction",
+          "description": "<p>The new DC United stadium wanted to implement money-saving green measures, which included an 884-kW solar system, high efficiency HVAC systems, LED field lighting, insulation, site stormwater conservation, a green roof, and low-flow fixtures.</p>",
+          "lifetimeSavings": "over $25MM",
+          "projectCost": "$25,000,000",
+          "title": "New construction"
+        },
+        {
+          "asset": "pace-affordable-housing",
+          "description": "<p>The Phyllis Wheatley YWCA provides 84 rental units to low-income women and was in urgent need of upgrades, including new appliances, new water fixtures, heating systems, lighting system, HVAC system, and solar.</p>",
+          "incomeAfter": "$7,000",
+          "projectCost": "$700,000",
+          "title": "Affordable housing"
+        },
+        {
+          "asset": "pace-office",
+          "description": "<p>The Headquarters of the FSFSC worked with the DC PACE program to finance HVAC, windows, lighting, and new kitchen equipment as part of a gut rehab, allowing it to attract new tenants.</p>",
+          "lifetimeSavings": "$2,500,000",
+          "projectCost": "$2,200,000",
+          "title": "Office"
+        }
+      ]
+    },
+    "hero": {
+      "title": "PACE Financing",
+      "video": {
+        "id": "359190073",
+        "imageId": "813016042"
+      }
+    },
+    "interviews": {
+      "description": "<p>Supported by political leaders from more than 30 states, PACE has been used to create over 50,000 jobs, save 32 million metric tons of carbon (the equivalent of 8 coal fired power plants), and help over 200,000 thousand Americans fund more than $5 billion in construction and renovation projects.</p>",
+      "subTitle": "Interviews",
+      "title": "Hear from real people",
+      "media": [
+        {
+          "imageId": "812961935",
+          "title": "HVAC updates",
+          "videoId": "359149116"
+        },
+        {
+          "imageId": "812961907",
+          "title": "Envelope update",
+          "videoId": "359149099"
+        },
+        {
+          "imageId": "812961881",
+          "title": "Solar update",
+          "videoId": "359149090"
+        }
+      ]
+    },
+    "meta": {
+      "pathname": "/resources/pace",
+      "seo": {
+        "title": "Pace Financing"
+      },
+      "tag": "pace"
+    },
+    "publications": {
+      "subTitle": "Publications",
+      "title": "Published results",
+      "media": [
+        {
+          "assetUrl": "/assets/publications/commercial-pace-for-housing.pdf",
+          "imageName": "commercial-pace-for-affordable-multifamily-housing",
+          "publisher": "Energy efficiency for all, NRDC & VEIC",
+          "title": "Commercial PACE for affordable multifamily housing",
+          "year": "2018"
+        },
+        {
+          "assetUrl": "/assets/publications/opening-c-i-solar-markets.pdf",
+          "imageName": "opening-c-i-solar-markets-with-c-pace",
+          "publisher": "SEIA and Alta Energy",
+          "title": "Opening C&I solar markets with C‑PACE",
+          "year": "2017"
+        },
+        {
+          "assetUrl": "/assets/publications/morningstar-clearing-the-air.pdf",
+          "imageName": "morningstar-clearing-the-air-addressing-misconceptions-about-pace",
+          "publisher": "Morningstar ABS Research",
+          "title": "Morningstar: clearing the air – Addressing misconceptions about PACE",
+          "year": "2017"
+        }
+      ]
+    },
+    "whatItIs": {
+      "content": "<p>PACE provides long-term financing for qualifying construction and renovations that improve the environmental footprint of property to save you money on utility bills with no money down. You repay funds to private lenders as a semi-annual voluntary tax, the first voluntary property tax assessment in the U.S. By using voluntary property taxes to repay funds, you and other small businesses get access to the same financing terms that large corporations benefit from, ensuring that your projects produce positive cash flow in year 1. This frees you up to spend your capital on other investment opportunities, such as opening that next location or hiring more staff.</p>",
+      "subTitle": "What is PACE?",
+      "title": "Let us explain",
+      "video": {
+        "id": "359190077",
+        "imageId": "813016118"
+      }
+    },
+    "webinars": {
+      "subTitle": "Webinars",
+      "title": "Learn about PACE first hand",
+      "media": [
+        {
+          "imageId": "812967716",
+          "title": "How to qualify for PACE?",
+          "videoId": "359152625"
+        },
+        {
+          "imageId": "812967640",
+          "title": "What can PACE fund?",
+          "videoId": "359152608"
+        },
+        {
+          "imageId": "812967543",
+          "title": "What is PACE?",
+          "videoId": "359152602"
+        },
+        {
+          "imageId": "812967448",
+          "title": "Who is using PACE?",
+          "videoId": "359152592"
+        }
+      ]
+    }
+  },
+  {
+    "articles": {
+      "tag": "onbill",
+      "subTitle": "Articles",
+      "title": "Learn more about OnBill"
+    },
+    "caseStudies": {
+      "subTitle": "Case Studies",
+      "title": "Projects funded with OnBill",
+      "projects": [
+        {
+          "asset": "onbill-restaurant",
+          "description": "<p>“The cost of food, beverage, and labor is rising. As a small business, we don't see a lot of opportunities for savings. It's easy for companies or programs to say they can benefit your restaurant, but this program actually delivers”<br/>- Russ Nemarich, VP of First and Last Tavern. </p>",
+          "energySavings": "$111,000",
+          "projectType": "New lighting system",
+          "title": "First and last tavern, Plainville, CT"
+        },
+        {
+          "asset": "onbill-ion-bank",
+          "description": "<p>“Our business depends on the success of the community. These energy upgrades help us to reinvest dollars back into the community and local charities. Plus, it makes my facilities job easier.”<br/>- Normand Chouinard, Facilities Manager, Ion Bank</p>",
+          "energySavings": "$15,000",
+          "projectType": "New lighting system",
+          "title": "Ion bank, Meriden, CT"
+        },
+        {
+          "asset": "onbill-geissler-supermarket",
+          "description": "<p>“This is a program that truly works for small, family businesses. We’ve seen results in both our energy usage and the overall quality and comfort of our Windsor location. It’s why we’ve moved forward with upgrades at nearly all of the Geissler’slocations.”<br/>- Jim Nilsson, Owner and President, Geissler’s Supermarket.</p>",
+          "energySavings": "$63,000",
+          "projectType": "Upgrades to commercial appliances",
+          "title": "Geissler's supermarket, Windsor, CT"
+        }
+      ]
+    },
+    "hero": {
+      "title": "OnBill Financing"
+    },
+    "meta": {
+      "pathname": "/resources/onbill",
+      "seo": {
+        "title": "OnBill Financing"
+      }
+    },
+    "whatItIs": {
+      "content": "<p>OnBill is a short-term contract that provides financing for qualifying renovation projects that reduce utility bills with no money down. Payments are made on your utility bill. While OnBill financing has been around for many years, only recently has the application process been simplified enough for small businesses to take advantage. OnBill programs vary widely by state and utility provider. In some states, OnBill may only be used for very small projects and the property owner must pay an interest rate. In other states, there may be zero interest. In almost all cases, the property owner is required to have good credit to qualify. Check out our product matching tool to make sure that OnBill is right for you.</p>",
+      "subTitle": "What is OnBill?",
+      "title": "Let us explain"
+    }
+  },
+  {
+    "articles": {
+      "tag": "ppa",
+      "subTitle": "Articles",
+      "title": "Learn more about PPA"
+    },
+    "caseStudies": {
+      "subTitle": "Case Studies",
+      "title": "Projects funded with PPA",
+      "projects": [
+        {
+          "asset": "ppa-office-building-360-direct",
+          "description": "<p>“I was a long time fan of alternative energy but concluded it didn’t work in WI. But, after looking at the solar ROI, I decided it was a perfect investment for our new building.”<br/>- building owner, 360 Direct</p>",
+          "photoCredit": "Photo credit: SunPeak",
+          "projectSize": "52 kWdc, producing 72,000 kWh/year",
+          "savings": "66% offset, saving 10.2¢ per kWh",
+          "title": "Office building, Brookfield WI"
+        },
+        {
+          "asset": "ppa-apartment-building",
+          "description": "<p>“SunPeak demonstrated clearly the recent afordability of solar (prices came down a lot.) We feel really good that a majority of our electricity is coming from the sun and we are protecting the environment while making a smart business decision at the same time.”<br/>- Nina Lebwohl, Manager, Foundry Apartments</p>",
+          "photoCredit": "Photo credit: SunPeak",
+          "projectSize": "19kWdc, producing 22,500 kWh/year",
+          "savings": "82% offset, saving 10.3¢ per kWh",
+          "title": "Apartment building, Madison WI"
+        },
+        {
+          "asset": "ppa-office-building",
+          "description": "<p>“Balancing historic preservation requirements with sustainability principles was a challenge. We assembled a team of experts to move through the process. SunPeak was a vital part of that team.”<br/>- Dave Morgan, Owner, Single Speed Brewery</p>",
+          "photoCredit": "Photo credit: SunPeak",
+          "projectSize": "103 kWdc, producing 123,500 kWh/year",
+          "savings": "21% offset, saving the equivalent of 2,600 tons of CO2",
+          "title": "Brewery, Waterloo, IA"
+        }
+      ]
+    },
+    "hero": {
+      "title": "PPA Financing"
+    },
+    "meta": {
+      "pathname": "/resources/ppa",
+      "seo": {
+        "title": "PPA Financing"
+      }
+    },
+    "whatItIs": {
+      "content": "<p>Power Purchase Agreement (PPA) is a long-term contract that provides property owners with renewable energy. You are not charged for equipment or installation and you only pay for the energy used. This type of financing agreement is primarily used for renewable energy that gets installed on your property; however, in some select jurisdictions you may be able to purchase renewable energy that's installed offsite. PPA contracts typically involve a solar installer, a capital provider, and a property owner. Savings are guaranteed whenever the rate for power that is listed in the PPA is less than the rate charged by your utility provider.</p>",
+      "subTitle": "What is PPA?",
+      "title": "Let us explain"
+    }
+  }
+]

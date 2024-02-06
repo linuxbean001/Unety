@@ -1,0 +1,80 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.up-pace-chart {
+  @include container;
+
+  @include break-on('small') {
+    display: none;
+  }
+
+  &__cell {
+    padding: $gutter-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__icon {
+      margin-right: $gutter-1;
+      width: $gutter-3;
+      height: $gutter-3;
+    }
+
+    &--available {
+      background-color: rgba(#4BB543, 0.4);
+    }
+
+    &--name {
+      justify-content: flex-start;
+    }
+
+    &--unavailable {
+      background-color: rgba(#cc0000, 0.4);
+    }
+
+    &--warning {
+      background-color: rgba(#FFCC00, 0.4);
+    }
+  }
+
+  &__inner {
+    max-width: 700px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 300px repeat(4, 90px);
+    grid-gap: 1px;
+    margin-bottom: 1px;
+
+    div:nth-child(2) {
+      background-color: rgba(#4BB543, 0.7);
+    }
+
+    &:last-child {
+      div:nth-child(3), div:nth-child(4) {
+        background-color: rgba(#cc0000, 0.4);
+      }
+      div:last-child {
+        background-color: rgba(#FFCC00, 0.4);
+      }
+    }
+
+    &--header {
+
+      div {
+        text-align: right;
+        padding: $gutter-1;
+        &:nth-child(2) {
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include title;
+  }
+}

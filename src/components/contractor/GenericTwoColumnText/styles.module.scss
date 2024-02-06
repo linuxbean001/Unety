@@ -1,0 +1,29 @@
+.layout {
+  position: relative;
+  z-index: 9;
+  background: #fff;
+  backface-visibility: hidden;
+}
+
+.well {
+  max-width: 900px;
+  margin: auto;
+  padding: 0px 8px;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    grid-gap: 48px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .well {
+    .grid {
+      grid-template-columns: repeat(2, minmax(100px, 1fr));
+      max-width: unset;
+    }
+  }
+}

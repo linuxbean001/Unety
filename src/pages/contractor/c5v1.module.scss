@@ -1,0 +1,11 @@
+.logos {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+
+  > * {
+    margin: 16px;
+    max-width: 200px;
+  }
+}

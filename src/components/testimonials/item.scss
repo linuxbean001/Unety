@@ -1,0 +1,35 @@
+@import "../../styles/mixins";
+
+.up-testimonial-item {
+  display: grid;
+  grid-template-columns: 150px minmax(200px, 1fr);
+
+  &__author {
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  &__image {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+
+    img {
+      width: 100%
+    }
+  }
+
+  &__quote {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: $gutter-4;
+  }
+}

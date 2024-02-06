@@ -1,0 +1,6 @@
+@import "../../styles/mixins";
+
+.rp-contact-page {
+  @include container;
+  @include content-section;
+}
