@@ -9,6 +9,7 @@ import { ArrowIcon, DownArrowIcon } from 'components/icons';
 import { LenderCarousel } from 'components/lenders';
 import { projectTypes } from 'constants/project-types';
 import { ValueCalculatorForm } from 'components/form';
+import { ArticleList } from "components/articles"
 
 import './styles/homepage.scss';
 
@@ -20,12 +21,13 @@ const howItWorksTitles = [
 ]
 
 class Homepage extends PureComponent {
+  constructor(props) {
+    super(props)
+  }
+
+  
 
   render() {
-
-
-    
-
     const {
       data: {
         howItWorksIcons: {
@@ -36,11 +38,34 @@ class Homepage extends PureComponent {
         },
         toolsIcons: {
           edges: toolIcons
+        },
+        allMarkdownRemark: {
+          edges: allMarkdownRemark
         }
+        
       }
     } = this.props;
 
-
+    
+    const articles = allMarkdownRemark.reduce((acc, {node}) => {
+      const {
+        html,
+        frontmatter,
+      } = node;
+      const { tag } = frontmatter;
+  
+      if (!acc[tag]) {
+        acc[tag] = [];
+      }
+  
+      acc[tag].push({
+        html,
+        ...frontmatter,
+      })
+      return acc;
+    }, {});
+    articles.list = articles.pace
+    console.log("fgfgsdfgsfgf",articles)
     const icons = projectTypesIcons.reduce((acc, { node: { name, childImageSharp } }) => {
       acc[name] = childImageSharp.fluid;
       return acc;
@@ -79,12 +104,12 @@ class Homepage extends PureComponent {
                   <div className="up-homepage__hero__right-bracket" />
                 </div>
                 <div className="up-homepage__hero__actions transition-opacity">
-                  {/*<a href="https://app.unety.io/auth/sign-up"
+                 {/*  <a href="https://app.unety.io/requestdemo"
                     className="up-homepage__hero__cta"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Get Started
+                    Get Demo
                   </a> */}
                   <span className='decorate'>Supported over $175 million of funding into green buildings projects</span>
                 </div>
@@ -153,6 +178,14 @@ class Homepage extends PureComponent {
             <LenderCarousel />
           </div>
         </section>
+
+        {/*------------- Article Section ----------------*/}
+        <section className="up-logo-list1">
+        {Array.isArray(articles.list) && articles.list.length > 0 && (
+          <ArticleList {...articles} subTitle="Articles" title="Take a deeper dive into PACE"/>
+        )}
+        </section>
+        {/*------------- Article Section ----------------*/}
 
         <section className="up-homepage__project-types animate-container" data-offset="1000">
           <div className="up-homepage__project-types__inner">
@@ -292,6 +325,26 @@ export const query = graphql`
                 }
             }
         }
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date] }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              html
+              frontmatter {
+                path
+                tag
+                title
+                subtitle
+                featuredImage {
+                    publicURL
+                }
+              }
+            }
+          }
+        }
+        
     }
 `;
 

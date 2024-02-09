@@ -3,7 +3,7 @@ import _ from "lodash"
 import React, { PureComponent } from "react"
 // import Img from "gatsby-image"
 import { graphql } from "gatsby"
-
+import emailjs from 'emailjs-com';
 // import { LenderProductDisplay } from "components/products"
 // import TeamMember from "components/about/TeamMember"
 import heroVideoWebm from "videos/homepage-hero.webm"
@@ -52,25 +52,82 @@ class AboutPage extends PureComponent {
     }))
   }
 
-  handleSubmit = e => {
-    e.preventDefault()
+  // handleSubmit = async e => {
+  //   e.preventDefault();
   
-    const { formData } = this.state
+  //   const { formData } = this.state;
   
-    // Prepare email body
+    
+  //     const emailBody = `
+  //       First Name: ${formData.firstName}
+  //       Last Name: ${formData.lastName}
+  //       Email Address: ${formData.emailAddress}
+  //       Company: ${formData.company}
+  //     `;
+
+
+  //     const emailParams = {
+  //       emailBody,
+  //       to_email: "limefresh5455@gmail.com"
+  //     };
+
+  //     try {
+  //       const response = await emailjs.send(
+  //         "service_2wos2j3", 
+  //         "template_rzn4m8r", 
+  //         emailParams,
+  //         "HcIrPXWni7wmsXq58"
+  //       );
+  //       console.log("Email sent:", response);
+  //       alert("Message Sent Successfully");
+  //     } catch (error) {
+  //       console.error("Error sending email:", error);
+  //       alert("Failed to send message. Please try again later.");
+  //     }
+   
+  // };
+
+  handleSubmit = async e => {
+    e.preventDefault();
+  
+    const { formData } = this.state;
+  
     const emailBody = `
       First Name: ${formData.firstName}
       Last Name: ${formData.lastName}
       Email Address: ${formData.emailAddress}
       Company: ${formData.company}
-    `
+    `;
   
-    // Create mailto link
-    const mailtoLink = `mailto:parker@unety.io?subject=New Contact Form Submission&body=${encodeURIComponent(emailBody)}`
+    const emailParams = {
+      emailBody,
+      to_email: "limefresh5455@gmail.com"
+    };
   
-    // Open default email client with pre-filled data
-    window.location.href = mailtoLink
-  }
+    try {
+      const response = await emailjs.send(
+        "service_2wos2j3", 
+        "template_rzn4m8r", 
+        emailParams,
+        "FUdNVujqlgkuESsy_31oe"
+      );
+      console.log("Email sent:", response);
+      alert("Message Sent Successfully");
+      
+      this.setState({
+        formData: {
+          firstName: "",
+          lastName: "",
+          emailAddress: "",
+          company: "",
+        }
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Failed to send message. Please try again later.");
+    }
+  };
+  
   
   handleChange = e => {
     const { name, value } = e.target

@@ -289,14 +289,14 @@ class ValueCalculator extends PureComponent {
                   {hasResults ? 'Dont Wait!' : 'Contact a contractor to learn more'}
 
                 </div>
-                {/*<a
+               {/* <a
                   className="up-value-calculator__results__cta"
-                  href="https://app.unety.io/auth/sign-up"
+                  href="https://app.unety.io/requestdemo"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Get started
-                </a> */}
+                  Get Demo
+                </a>  */}
               </div>
             </div>
         </div>

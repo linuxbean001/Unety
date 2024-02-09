@@ -16,10 +16,10 @@ const navItems = [
   //   label: 'Team',
   //   to: '/about#meet-the-team',
   // },
-  // {
-  //   label: 'Products',
-  //   to: '/about#our-products',
-  // },
+  {
+    label: 'Products',
+    to: '/about#our-products',
+  },
   {
     label: 'Resources',
     to: '/resources',
@@ -141,7 +141,7 @@ class Header extends PureComponent {
                 </a> */}
                 <a
                   className="up-header__nav__cta"
-                  href="http://localhost:8000/requestdemo"
+                  href="/requestdemo"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

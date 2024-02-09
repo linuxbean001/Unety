@@ -12,5 +12,5 @@ By participating in this program, you will be introduced to the property owners 
 <div style="text-align: center;">
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xU_Q7zjW_VQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <br /><br />
-  <a href="https://app.unety.io/auth/sign-up" target="_blank" rel="noopener noreferer">Sign up today</a> to participate and unlock the benefits of the program.
+  <a href="https://app.unety.io/requestdemo" target="_blank" rel="noopener noreferer">Sign up today</a> to participate and unlock the benefits of the program.
 </div>
