@@ -39,6 +39,7 @@ const TEAM_MEMBERS = [
 class AboutPage extends PureComponent {
   state = {
     videoId: "",
+    activeSection: 0,
   }
 
   setVideoId(videoId) {
@@ -47,8 +48,20 @@ class AboutPage extends PureComponent {
     }))
   }
 
+  handleNextSection = () => {
+    const { activeSection } = this.state;
+    const totalSections = 3; 
+
+    const nextSection = (activeSection + 1) % totalSections;
+
+    this.setState({
+      activeSection: nextSection
+    });
+  }
+
   render() {
     const { videoId } = this.state
+    const { activeSection } = this.state
 
     const { ourMission, ourStory, team } = this.props.data
 
@@ -192,14 +205,21 @@ class AboutPage extends PureComponent {
               </div>
               <div className="up-about-page__mission__image">
                 {/*  <Img fluid={ourMission.childImageSharp.fluid} />*/}
-                <img src="/gif.PNG" alt="gif" style={{height:"50%", objectFit:"fill"}} />
+                <img
+                  src="/gif.PNG"
+                  alt="gif"
+                  style={{ height: "50%", objectFit: "fill" }}
+                />
               </div>
             </div>
           </div>
           <div id="our-story" />
         </section>
 
-        <section className="up-about-page__story animate-container" style={{marginTop:"-20rem", marginBottom:"-10rem"}}>
+        <section
+          className="up-about-page__story animate-container"
+          style={{ marginTop: "-20rem", marginBottom: "-10rem" }}
+        >
           <div className="up-about-page__story__inner">
             <h2 className="up-about-page__story__title transition-opacity">
               {/*   <span>Our Story</span>
@@ -208,7 +228,11 @@ class AboutPage extends PureComponent {
             <div className="up-about-page__mission__grid transition-slide-in">
               <div className="up-about-page__story__image">
                 {/* <Img fluid={ourStory.childImageSharp.fluid} />*/}
-                <img src="/tree.png" alt="tree" style={{height:"60%"}} />
+                <img
+                  src="/tree.png"
+                  alt="tree"
+                  style={{ height: "60%", objectFit: "fill" }}
+                />
               </div>
               <div className="up-about-page__story__content">
                 <p>Piloted by the CT Green Bank.</p>
@@ -229,11 +253,7 @@ class AboutPage extends PureComponent {
           <LenderProductDisplay productFeatures={lenderProductFeatures} />
           <div id="contractor-product" />
           <div className="mt1">
-            <span>
-              Tools for Lenders section and Tools for Contractors section
-            </span>
-            <br />
-            <br />
+           
             <iframe
               src="https://drive.google.com/file/d/1WBzRepg9FKFWsdzxiy09ZCpfYefpH5qe/preview"
               width="1140"
@@ -278,7 +298,14 @@ class AboutPage extends PureComponent {
               style={{ paddingTop: "0px" }}
             >
               <div className="up-lender-product__track">
-                <div className="up-lender-product__track__item up-lender-product__track__item--active">
+                {/*------------ First Section ----------------*/}
+                <div
+                  className={`up-lender-product__track__item ${
+                    activeSection === 0
+                      ? "up-lender-product__track__item--active"
+                      : ""
+                  }`}
+                >
                   <div className="up-lender-product__title up-lender-product__title--mobile">
                     <span> Tools for Enterprises </span> Manage Portfolios
                   </div>
@@ -289,6 +316,9 @@ class AboutPage extends PureComponent {
                       </div>
 
                       <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
+                        <button className="up-lender-product__nav__item__label">
+                          Manage your Portfolios
+                        </button>
                         <div
                           className="up-lender-product__nav__item__desc"
                           style={{ maxHeight: "100%", lineHeight: "2" }}
@@ -300,10 +330,53 @@ class AboutPage extends PureComponent {
                           sustainability retrofits.
                         </div>
                       </div>
+
+                      <div className="up-lender-product__actions">
+                        <button
+                          className="up-lender-product__actions__cta"
+                          onClick={this.handleNextSection}
+                          style={{marginLeft:"0px", marginTop:"35px"}}
+                        >
+                          Next:&nbsp;&nbsp;<strong>Portfolios</strong>
+                          <svg viewBox="0 0 477.175 477.175">
+                            <path d="M360.731 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"></path>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                     <div className="up-lender-product__screenshots">
                       <div className="up-lender-product__screenshot up-lender-product__screenshot--active">
                         <div class="up-browser-frame">
+                          <div className="row">
+                            <div className="column left">
+                              <span
+                                className="dot"
+                                style={{ backgroundColor: "rgb(237, 89, 74)" }}
+                              ></span>
+                              <span
+                                className="dot"
+                                style={{ backgroundColor: "rgb(253, 216, 0)" }}
+                              ></span>
+                              <span
+                                className="dot"
+                                style={{ backgroundColor: "rgb(90, 192, 90)" }}
+                              ></span>
+                            </div>
+                            <div className="column middle">
+                              <input
+                                disabled=""
+                                type="text"
+                                value="https://www.unety.io"
+                              />
+                            </div>
+                            <div className="column right">
+                              <div style={{ float: "right" }}>
+                                <span className="bar"></span>
+                                <span className="bar"></span>
+                                <span className="bar"></span>
+                              </div>
+                            </div>
+                          </div>
                           <div className="content">
                             <img src="/1.png" alt="" />
                           </div>
@@ -312,167 +385,121 @@ class AboutPage extends PureComponent {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          {/*--------------------------- Second Section ---------------------------*/}
+                {/*------------ First Section ----------------*/}
 
-          {/*--------------------------- Third Section ---------------------------*/}
-          {/*<div className="up-lender-product" style={{ marginTop: "-150px" }}>
-            <div className="up-lender-product__inner">
-              <div className="up-lender-product__track">
-                <div className="up-lender-product__track__item up-lender-product__track__item--active">
+                {/*------------ Second Section ----------------*/}
+                <div
+                  className={`up-lender-product__track__item ${
+                    activeSection === 1
+                      ? "up-lender-product__track__item--active"
+                      : ""
+                  }`}
+                >
                   <div className="up-lender-product__title up-lender-product__title--mobile">
-                    <span></span> Coordinate <br />
-                    Properties
+                    <span>Tools for Enterprises</span>Coordinate Properties
                   </div>
                   <div className="up-lender-product__grid">
                     <div className="up-lender-product__nav">
                       <div className="up-lender-product__title up-lender-product__title--desktop">
-                        <span></span>Coordinate <br /> Properties
+                        <span>Tools for Enterprises</span>Coordinate Properties
                       </div>
-
                       <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
-                        <div
-                          className="up-lender-product__nav__item__desc"
-                          style={{ maxHeight: "100%", lineHeight: "2" }}
-                        >
-                          <b>Collaborate between teams</b> or companies working
-                          on the ground to verify project viability on candidate
-                          properties. Work together to manage local decision
-                          makers’ expectations and close financings.
+                      <button className="up-lender-product__nav__item__label">
+                          Manage your Invetigate
+                        </button>
+                        <div className="up-lender-product__nav__item__desc">
+                          Collaborate between teams or companies working on the
+                          ground to verify project viability on candidate
+                          properties.
                         </div>
+                      </div>
+                      
+                      <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
+                        <div className="up-lender-product__nav__item__desc">
+                          Work together to manage local decision makers’
+                          expectations and close financings.
+                        </div>
+                      </div>
+                      <div className="up-lender-product__actions">
+                        <button
+                          className="up-lender-product__actions__cta"
+                          onClick={this.handleNextSection}
+                          style={{marginLeft:"0px",marginTop:"50px"}}
+                        >
+                          Next:&nbsp;&nbsp;<strong>Projects</strong>
+                          <svg viewBox="0 0 477.175 477.175">
+                            <path d="M360.731 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"></path>
+                          </svg>
+                        </button>
                       </div>
                     </div>
                     <div className="up-lender-product__screenshots">
-                      <div className="up-lender-product__screenshot up-lender-product__screenshot--active">
-                        <div class="up-browser-frame">
-                          <div className="content">
-                            <img src="/2.png" alt="" />
+                    <div className="up-lender-product__screenshot up-lender-product__screenshot--active">
+                      <div class="up-browser-frame">
+                        <div className="row">
+                          <div className="column left">
+                            <span
+                              className="dot"
+                              style={{ backgroundColor: "rgb(237, 89, 74)" }}
+                            ></span>
+                            <span
+                              className="dot"
+                              style={{ backgroundColor: "rgb(253, 216, 0)" }}
+                            ></span>
+                            <span
+                              className="dot"
+                              style={{ backgroundColor: "rgb(90, 192, 90)" }}
+                            ></span>
                           </div>
+                          <div className="column middle">
+                            <input
+                              disabled=""
+                              type="text"
+                              value="https://www.unety.io"
+                            />
+                          </div>
+                          <div className="column right">
+                            <div style={{ float: "right" }}>
+                              <span className="bar"></span>
+                              <span className="bar"></span>
+                              <span className="bar"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="content">
+                          <img src="/2.png" alt="" />
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>*/}
-
-          <div
-            className="up-about-page__contractor-product"
-            style={{ marginBottom: "4rem", marginTop: "-150px" }}
-          >
-            <div className="up-lender-product">
-              <div className="up-lender-product__inner">
-                <div className="up-lender-product__track">
-                  <div className="up-lender-product__track__item up-lender-product__track__item--active">
-                    <div className="up-lender-product__title up-lender-product__title--mobile">
-                      <span></span>Coordinate <br /> &nbsp; &nbsp;Properties
-                    </div>
-                    <div className="up-lender-product__grid up-lender-product__grid--reverse">
-                      <div className="up-lender-product__nav">
-                        <div className="up-lender-product__title up-lender-product__title--desktop">
-                          <span></span>Coordinate <br /> &nbsp; &nbsp;Properties
-                        </div>
-                        <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
-                          <div className="up-lender-product__nav__item__desc">
-                            Collaborate between teams or companies working on
-                            the ground to verify project viability on candidate
-                            properties.
-                          </div>
-                        </div>
-                      <br/>
-                      <br/>
-                        <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
-                          <div className="up-lender-product__nav__item__desc">
-                            Work together to manage local decision makers’
-                            expectations and close financings.
-                          </div>
-                        </div>
-                      </div>
-                      <div className="up-lender-product__screenshots">
-                        <div className="up-lender-product__screenshot up-lender-product__screenshot--active">
-                          <div className="up-browser-frame">
-                            <div className="content">
-                              <img src="/2.png" alt="" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="up-lender-product__screenshot">
-                          <div className="up-browser-frame">
-                            <div className="row">
-                              <div className="column left">
-                                <span
-                                  className="dot"
-                                  style={{
-                                    backgroundColor: "rgb(237, 89, 74)",
-                                  }}
-                                ></span>
-                                <span
-                                  className="dot"
-                                  style={{
-                                    backgroundColor: "rgb(253, 216, 0)",
-                                  }}
-                                ></span>
-                                <span
-                                  className="dot"
-                                  style={{
-                                    backgroundColor: "rgb(90, 192, 90)",
-                                  }}
-                                ></span>
-                              </div>
-                              <div className="column middle">
-                                <input
-                                  disabled=""
-                                  type="text"
-                                  value="https://www.unety.io"
-                                />
-                              </div>
-                              <div className="column right">
-                                <div style={{ float: "right" }}>
-                                  <span className="bar"></span>
-                                  <span className="bar"></span>
-                                  <span className="bar"></span>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="content">
-                              <img
-                                src="/static/identify-badd1f0515a0925ee3f34016d1b3eb8f.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          {/*--------------------------- Third Section ---------------------------*/}
+                {/*------------ Second Section ----------------*/}
 
-          {/*--------------------------- Fourth Section ---------------------------*/}
-          <div className="up-lender-product" style={{ marginTop: "-150px" }}>
-            <div className="up-lender-product__inner">
-              <div className="up-lender-product__track">
-                <div className="up-lender-product__track__item up-lender-product__track__item--active">
+                {/*------------ Third Section ----------------*/}
+                <div
+                  className={`up-lender-product__track__item ${
+                    activeSection === 2
+                      ? "up-lender-product__track__item--active"
+                      : ""
+                  }`}
+                >
                   <div className="up-lender-product__title up-lender-product__title--mobile">
-                    <span></span> Execute <br />
-                    &nbsp; &nbsp; Transactions
+                    <span>Tools for Enterprises</span> Execute Transactions
                   </div>
                   <div className="up-lender-product__grid">
                     <div className="up-lender-product__nav">
                       <div className="up-lender-product__title up-lender-product__title--desktop">
-                        <span></span>Execute <br />&nbsp; &nbsp; Transactions
+                        <span>Tools for Enterprises</span>Execute Transactions
                       </div>
 
                       <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
+                      <button className="up-lender-product__nav__item__label">
+                          Manage your Deals
+                        </button>
                         <div
                           className="up-lender-product__nav__item__desc"
-                          style={{ maxHeight: "100%", lineHeight: "2" }}
+                          style={{ maxHeight: "100%"}}
                         >
                           Unety automates and democratizes brokerage of
                           sustainability finance.
@@ -482,13 +509,25 @@ class AboutPage extends PureComponent {
                       <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
                         <div
                           className="up-lender-product__nav__item__desc"
-                          style={{ maxHeight: "100%", lineHeight: "2" }}
+                          style={{ maxHeight: "100%", marginTop:"-20px"}}
                         >
                           Anyone can be their own broker and earn brokerage fees
                           with the right tools and network. Existing brokers can
                           dramatically improve productivity and performance with
                           better tools and a larger network.
                         </div>
+                      </div>
+                      <div className="up-lender-product__actions">
+                        <button
+                          className="up-lender-product__actions__cta"
+                          onClick={this.handleNextSection}
+                          style={{marginLeft:"0px",marginTop:"0px"}}
+                        >
+                          Next:&nbsp;&nbsp;<strong>Transactions</strong>
+                          <svg viewBox="0 0 477.175 477.175">
+                            <path d="M360.731 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"></path>
+                          </svg>
+                        </button>
                       </div>
                     </div>
                     <div className="up-lender-product__screenshots">
@@ -502,11 +541,12 @@ class AboutPage extends PureComponent {
                     </div>
                   </div>
                 </div>
+                {/*------------ Third Section ----------------*/}
               </div>
             </div>
           </div>
-          {/*--------------------------- Fourth Section ---------------------------*/}
 
+          {/*--------------------------- Second Section ---------------------------*/}
           {/*--------------------------- Slide 19 to 21 ---------------------------*/}
           <div id="meet-the-team" />
           <div className="mt3">

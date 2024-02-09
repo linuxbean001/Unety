@@ -87,7 +87,7 @@ class AboutPage extends PureComponent {
    
   // };
 
-  handleSubmit = async e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
   
     const { formData } = this.state;
@@ -101,31 +101,28 @@ class AboutPage extends PureComponent {
   
     const emailParams = {
       emailBody,
-      to_email: "limefresh5455@gmail.com"
+      to_email: "prashnat.linuxbean@gmail.com"
     };
-  
-    try {
-      const response = await emailjs.send(
-        "service_2wos2j3", 
-        "template_rzn4m8r", 
-        emailParams,
-        "FUdNVujqlgkuESsy_31oe"
-      );
-      console.log("Email sent:", response);
+
+    emailjs.send('service_2wos2j3', 'template_rzn4m8r', emailParams, 'V9EBpBi3O4NA2e-1N')
+  .then(
+    (response) => {
+      console.log('SUCCESS!', response);
       alert("Message Sent Successfully");
-      
-      this.setState({
-        formData: {
-          firstName: "",
-          lastName: "",
-          emailAddress: "",
-          company: "",
-        }
-      });
-    } catch (error) {
-      console.error("Error sending email:", error);
+    },
+    (err) => {
+      console.log('FAILED...', err);
       alert("Failed to send message. Please try again later.");
+    },
+  );
+  this.setState({
+    formData: {
+      firstName: "",
+      lastName: "",
+      emailAddress: "",
+      company: "",
     }
+  });
   };
   
   
