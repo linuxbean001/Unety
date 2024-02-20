@@ -20,7 +20,6 @@ const Benefit = ({ title, description }) => {
 
 const GenericSignup = () => {
   const handleFormSubmit = (values) => {
-    console.log('VALUES', values);
   }
 
   return (

@@ -57,7 +57,7 @@ export const lenderProductFeatures = [
       },
     ],
     subTitle: 'Tools for',
-    title: 'Tools for Sustainable Financiers',
+    title: 'Sustainable Financiers',
   }
 ];
 
@@ -98,7 +98,7 @@ export const contractorProductFeatures = [
         screenshot: coverage,
       },
     ],
-    subTitle: 'Tools for Contractors',
+    subTitle: 'Tools for ESG Professionals',
     title: 'Project screening',
   },
   {
@@ -124,7 +124,7 @@ export const contractorProductFeatures = [
         screenshot: results,
       },
     ],
-    subTitle: 'Tools for Contractors',
+    subTitle: 'Tools for ESG Professionals',
     title: 'Funding options',
   },
   {
@@ -145,7 +145,7 @@ export const contractorProductFeatures = [
         screenshot: bottomLine,
       },
     ],
-    subTitle: 'Tools for Contractors',
+    subTitle: 'Tools for ESG Professionals',
     title: 'Cash flow calculator',
   },
 ]

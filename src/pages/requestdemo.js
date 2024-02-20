@@ -3,7 +3,7 @@ import _ from "lodash"
 import React, { PureComponent } from "react"
 // import Img from "gatsby-image"
 import { graphql } from "gatsby"
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com"
 // import { LenderProductDisplay } from "components/products"
 // import TeamMember from "components/about/TeamMember"
 import heroVideoWebm from "videos/homepage-hero.webm"
@@ -36,14 +36,12 @@ const TEAM_MEMBERS = [
 ]
 
 class AboutPage extends PureComponent {
-  state = {
-    videoId: "",
-    formData: {
-      firstName: "",
-      lastName: "",
-      emailAddress: "",
-      company: "",
-    },
+  constructor(props) {
+    super(props)
+    this.form = React.createRef()
+    this.state = {
+      videoId: "",
+    }
   }
 
   setVideoId(videoId) {
@@ -52,89 +50,28 @@ class AboutPage extends PureComponent {
     }))
   }
 
-  // handleSubmit = async e => {
-  //   e.preventDefault();
-  
-  //   const { formData } = this.state;
-  
-    
-  //     const emailBody = `
-  //       First Name: ${formData.firstName}
-  //       Last Name: ${formData.lastName}
-  //       Email Address: ${formData.emailAddress}
-  //       Company: ${formData.company}
-  //     `;
+  handleSubmit = async e => {
+    e.preventDefault()
 
-
-  //     const emailParams = {
-  //       emailBody,
-  //       to_email: "limefresh5455@gmail.com"
-  //     };
-
-  //     try {
-  //       const response = await emailjs.send(
-  //         "service_2wos2j3", 
-  //         "template_rzn4m8r", 
-  //         emailParams,
-  //         "HcIrPXWni7wmsXq58"
-  //       );
-  //       console.log("Email sent:", response);
-  //       alert("Message Sent Successfully");
-  //     } catch (error) {
-  //       console.error("Error sending email:", error);
-  //       alert("Failed to send message. Please try again later.");
-  //     }
-   
-  // };
-
-  handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    const { formData } = this.state;
-  
-    const emailBody = `
-      First Name: ${formData.firstName}
-      Last Name: ${formData.lastName}
-      Email Address: ${formData.emailAddress}
-      Company: ${formData.company}
-    `;
-  
-    const emailParams = {
-      emailBody,
-      to_email: "prashnat.linuxbean@gmail.com"
-    };
-
-    emailjs.send('service_2wos2j3', 'template_rzn4m8r', emailParams, 'V9EBpBi3O4NA2e-1N')
-  .then(
-    (response) => {
-      console.log('SUCCESS!', response);
-      alert("Message Sent Successfully");
-    },
-    (err) => {
-      console.log('FAILED...', err);
-      alert("Failed to send message. Please try again later.");
-    },
-  );
-  this.setState({
-    formData: {
-      firstName: "",
-      lastName: "",
-      emailAddress: "",
-      company: "",
-    }
-  });
-  };
-  
-  
-  handleChange = e => {
-    const { name, value } = e.target
-    this.setState(prevState => ({
-      formData: {
-        ...prevState.formData,
-        [name]: value,
-      },
-    }))
+    emailjs
+      .sendForm(
+        "service_9uh429q",
+        "template_ava3p5k",
+        this.form.current,
+        "3Q1Fi6mJfJMB6d2Y0"
+      )
+      .then(
+        response => {
+          console.log("SUCCESS!", response)
+          alert("Form Data Send Successfully")
+        },
+        err => {
+          console.log("FAILED...", err)
+          alert("Failed to send message. Please try again later.")
+        }
+      )
   }
+
 
   render() {
     const { videoId } = this.state
@@ -150,7 +87,6 @@ class AboutPage extends PureComponent {
       return acc
     }, {})
 
-   
     return (
       <div className="up-about-page">
         <ModalVideo
@@ -175,76 +111,76 @@ class AboutPage extends PureComponent {
             <source type="video/webm" src={`${heroVideoWebm}#t=0.1`} />
             <source type="video/mp4" src={`${heroVideoMp4}#t=0.1`} />
           </video>
-          <div className="up-about-page__hero1">
-            {/*  <div className="up-about-page__hero__inner">
-              <div className="up-about-page__hero__content">
-                <div className="up-about-page__hero__title">
-                  <h1 className="transition-opacity">
-                    Making clean energy<br/> profitable for you
-                  </h1>
-                </div>
-              </div>
-            </div> */}
-          </div>
+          <div className="up-about-page__hero1"></div>
         </section>
-        <section className="block">
-          <div className="left-p">
-            <h1>Request a Demo</h1>
-            <p>
-              <span>
-                Our tools match properties and projects to types of financing,
-              </span>
-              <br />
-              <span>
-                based on property owner qualification, project conditions and
-              </span>
-              <br />
-              <span>
-                user preferences. Our tools automate business processes and
-              </span>
-              <br />
-              <span>
-                improve productivity for salespeople, contractors, and lenders
-              </span>
-            </p>
-          </div>
-          <div className="right-p">
-            <div className="card">
-            <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              name="firstName"
-              placeholder="FirstName"
-              value={this.state.formData.firstName}
-              onChange={this.handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="lastName"
-              placeholder="LastName"
-              value={this.state.formData.lastName}
-              onChange={this.handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="emailAddress"
-              placeholder="EmailAddress"
-              value={this.state.formData.emailAddress}
-              onChange={this.handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="company"
-              placeholder="Company"
-              value={this.state.formData.company}
-              onChange={this.handleChange}
-              required
-            />
-            <input type="submit" value="GET IN TOUCH" />
-          </form>
+        <section className="blocks">
+          <div className="row">
+            <div className="form-content">
+              <div className="text-heading">
+                <h1 className="mb-20">Request a Demo</h1>
+                <p>
+                  Our tools match properties and projects to types of financing,
+                  based on property owner qualifications, project conditions,
+                  and user preferences. Our tools automate business processes
+                  and improve productivity for salespeople, contractors, and
+                  lenders.
+                </p>
+                <iframe
+                  src="https://drive.google.com/file/d/1Hem-CUEIxcKRxc0lAMq3lWdgPl8951JQ/preview"
+                  width="100%"
+                  height="350"
+                  allow="autoplay"
+                  controls="0"
+                ></iframe>
+              </div>
+            </div>
+
+            <div className="form-field">
+              <div className="cards">
+                <form
+                  onSubmit={this.handleSubmit}
+                  ref={this.form}
+                  className="form"
+                >
+                  <div className="input-group">
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder="First Name"
+                      required
+                    />
+                  </div>
+                  <div className="input-group">
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder="Last Name"
+                      required
+                    />
+                  </div>
+                  <div className="input-group">
+                    <input
+                      type="email"
+                      name="emailAddress"
+                      placeholder="Email Address"
+                      required
+                    />
+                  </div>
+                  <div className="input-group">
+                    <input
+                      type="text"
+                      name="company"
+                      placeholder="Company"
+                      required
+                    />
+                  </div>
+                  <input
+                    className="up-lender-product__actions__cta"
+                    type="submit"
+                    value="GET IN TOUCH"
+                  />
+                </form>
+              </div>
             </div>
           </div>
         </section>

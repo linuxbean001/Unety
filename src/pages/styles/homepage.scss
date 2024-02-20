@@ -523,3 +523,40 @@
 
 up-logo-list1 {
 }
+
+.up-logo-list img {
+  width: auto !important;
+  height: 55px !important;
+}
+
+.up-logo-list__title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 100px !important;
+}
+section.case-study {
+  padding-top: 30px;
+}
+
+.fontd {
+  font-family: Open Sans,sans-serif;
+  position: relative;
+  padding-bottom: 8px;
+  font-size: 22px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.fontd:before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 65px;
+  height: 2px;
+  background: #933;
+  right: 0;
+  margin: 0 auto;
+}

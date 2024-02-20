@@ -24,14 +24,12 @@ const LenderCarousel = () => {
     }
   `)
 
-  console.log(data)
   if (!data.lenderLogos || !data.lenderLogos.edges) {
     return null
   }
 
   const logos = data.lenderLogos.edges
 
-  console.log("object", logos)
 
   return (
     <div className="lender-logo-carousel">

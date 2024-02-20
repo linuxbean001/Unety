@@ -20,7 +20,6 @@ const VideoSelectionSection = ({
 }) => {
   const containerClasses = classNames("up-resource__video-selection", className)
 
-  console.log("media", media)
   return (
     <section className={containerClasses}>
       <div className="up-resource__video-selection__inner">

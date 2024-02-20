@@ -286,19 +286,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 0;
   align-items: center;
   flex-direction: column;
 }
 
-.mt3{
+.mt3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: -1rem;
+  margin-top: 0;
   align-items: center;
+  padding-bottom: 60px;
 }
-
 .up-about-page__hero1 {
   width: 100%;
   margin: 0 auto;
@@ -399,4 +399,336 @@
 
 .card form input[type="submit"]:hover {
   background-color: #018a92;
+}
+.pt-80 {
+  padding: 80px 0;
+}
+
+.blocks {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 15px;
+}
+.mb-50{
+  margin-bottom:50px!important;
+}
+ul.list {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+.list li {
+  /* color: #3f0f64; */
+  padding-left: 35px;
+  position: relative;
+  margin-bottom: 15px;
+  line-height: 25px;
+}
+
+.list li:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #8a191d;
+  border-radius: 50%;
+  top: 6px;
+  left: 15px;
+}
+.align-center {
+  display: flex;
+  align-items: center;
+}
+.half-col{
+  width: 55%;
+}
+.mt-30{
+  margin-top:30px;
+}
+.v-sec .up-lender-product{
+  padding:0!important;
+}
+.form-content {
+  flex: 0 0 auto;
+  width: 66.66666667%;
+  padding: 0px 15px;
+}
+.form-field {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+  padding: 0px 15px;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  background: #833334;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 55px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.input-group {
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.input-group input {
+  margin-right: 15px;
+  line-height: 2em;
+  color: #545859;
+  background-color: #fff !important;
+  min-height: 1em;
+  box-shadow: inset 0px 0px 0px 0px;
+  padding: 0.35em 0.55em !important;
+  border: none;
+  width: 100%;
+  letter-spacing: 0.5px;
+}
+.input-group input:last-child {
+  margin-right: 0;
+}
+.cards input[type="submit"] {
+  width: 160px;
+  margin: 0 auto;
+  display: inline-block;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -15px;
+  max-width: 100%;
+}
+.cards input[type="submit"]:hover{
+background:#fff; color:#833334 ; border-color:#833334; ;
+} 
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.popup-inner {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 65%;
+  height: 500px;
+  margin: 0 auto;
+}
+.popup-inner iframe{
+width:100%!important; height:480px!important ;
+}
+
+.close-btn {
+  position: absolute;
+  top: 63px;
+  right: 215px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background: #833334;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+.close-btn:hover {
+  color: #833334; background-color:#fff ;
+}
+.close-btn2 {
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background: #833334;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+.close-btn2:hover {
+  color: #833334; background-color:#fff ;
+}
+
+
+// .videobutton {
+//   position: absolute;
+//   bottom: -50px;
+//   margin: 0 auto;
+//   left: 290px;
+//   right: auto;
+//   background: #933;
+//   color: #fff;
+//   border: 0px;
+//   display: flex;
+//   border-radius: 10px;
+//   box-shadow: 1px 21px 46px rgba(0, 0, 100, 0.1);
+//   cursor: pointer;
+//   width: 105px;
+//   height: 105px;
+//   border-radius: 100%; 
+//   align-items: center;
+//   line-height: 21px;
+//   font-size: 16px;
+//   transition: transform 0.3s ease;
+// }
+
+.videobutton {
+  position: absolute;
+  /* bottom: -50px; */
+  margin: 0 auto;
+  /* left: 290px; */
+  left: 50%;
+  transform: translate(-50%,-50%);
+  right: auto;
+  background: #933;
+  color: #fff;
+  border: 0px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 21px 46px rgba(0, 0, 100, 0.1);
+  cursor: pointer;
+  width: 105px;
+  height: 105px;
+  border-radius: 100%;
+  align-items: center;
+  line-height: 21px;
+  font-size: 16px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+/* Create the border effect using ::before pseudo-element */
+.videobutton::before {
+  content: '';
+  position: absolute;
+  border: 1px solid #fff; /* Adjust border color */
+  border-radius: 50%; /* Make sure to use 50% for perfect circle */
+  box-sizing: border-box; /* Include border width in width and height calculation */
+  top:5px;
+  left:5px;
+  right:5px;
+  bottom:5px;
+}
+
+
+.videobuttons {
+  position: absolute;
+  bottom: -65px; 
+  margin: 0 auto;
+  /* left: 290px; */
+  left: 50%;
+  transform: translate(-50%,-50%);
+  right: auto;
+  background: #933;
+  color: #fff;
+  border: 0px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 21px 46px rgba(0, 0, 100, 0.1);
+  cursor: pointer;
+  width: 105px;
+  height: 105px;
+  border-radius: 100%;
+  align-items: center;
+  line-height: 21px;
+  font-size: 16px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+/* Create the border effect using ::before pseudo-element */
+.videobuttons::before {
+  content: '';
+  position: absolute;
+  border: 1px solid #fff; /* Adjust border color */
+  border-radius: 50%; /* Make sure to use 50% for perfect circle */
+  box-sizing: border-box; /* Include border width in width and height calculation */
+  top:5px;
+  left:5px;
+  right:5px;
+  bottom:5px;
+}
+
+
+.videobuttonss {
+  position: absolute;
+  bottom: -90px;
+  margin: 0 auto;
+  /* left: 290px; */
+  left: 50%;
+  transform: translate(-50%,-50%);
+  right: auto;
+  background: #933;
+  color: #fff;
+  border: 0px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 21px 46px rgba(0, 0, 100, 0.1);
+  cursor: pointer;
+  width: 105px;
+  height: 105px;
+  border-radius: 100%;
+  align-items: center;
+  line-height: 21px;
+  font-size: 16px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+/* Create the border effect using ::before pseudo-element */
+.videobuttonss::before {
+  content: '';
+  position: absolute;
+  border: 1px solid #fff; /* Adjust border color */
+  border-radius: 50%; /* Make sure to use 50% for perfect circle */
+  box-sizing: border-box; /* Include border width in width and height calculation */
+  top:5px;
+  left:5px;
+  right:5px;
+  bottom:5px;
+}
+
+
+.bgData{
+  background-color:#f6f6f6;
+}
+
+
+.mtg{
+  padding-bottom: 20px;
 }

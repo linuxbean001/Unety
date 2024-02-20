@@ -110,7 +110,6 @@ const GenericSignUpForm = () => {
             theme={selectTheme}
             value={userType}
             onChange={(value) => {
-              console.log(value);
               setUserType(value)
             }}
             options={userTypeValues}

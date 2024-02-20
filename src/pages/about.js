@@ -40,6 +40,7 @@ class AboutPage extends PureComponent {
   state = {
     videoId: "",
     activeSection: 0,
+    showPopup: false,
   }
 
   setVideoId(videoId) {
@@ -49,14 +50,20 @@ class AboutPage extends PureComponent {
   }
 
   handleNextSection = () => {
-    const { activeSection } = this.state;
-    const totalSections = 3; 
+    const { activeSection } = this.state
+    const totalSections = 3
 
-    const nextSection = (activeSection + 1) % totalSections;
+    const nextSection = (activeSection + 1) % totalSections
 
     this.setState({
-      activeSection: nextSection
-    });
+      activeSection: nextSection,
+    })
+  }
+
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup,
+    })
   }
 
   render() {
@@ -165,14 +172,15 @@ class AboutPage extends PureComponent {
                   automated the most difficult aspects of funding
                   sustainability; raised venture capital; went to market; and
                   helped 330 small commercial properties complete over $176
-                  million of green building retrofits in less than six months.
-                  Unfortunately, Unety did not survive the COVID pandemic.
+                  million of green building retrofits. Unfortunately, Unety did
+                  not survive the COVID pandemic.
                 </p>
                 <p>
                   I have left this website up so that it can serve as a playbook
-                  for how we achieved our success in the hope that it proves
-                  useful for anyone else looking to solve the same problem. If
-                  that happens to be you, please reach out to the email below.
+                  for how we achieved our accomplishments in the hope that it
+                  proves useful for anyone else looking to solve the same
+                  problem. If that happens to be you, please reach out to the
+                  email below.
                 </p>
               </div>
             </div>
@@ -180,110 +188,95 @@ class AboutPage extends PureComponent {
           <div id="our-products" />
         </section>
 
-        <section className="up-about-page__mission" data-offset="1000">
-          <div className="up-about-page__mission__inner">
-            <h2 className="up-about-page__mission__title">
-              {/*  <span>Our Mission</span>
+        <div className="bgData">
+          <section
+            className="up-about-page__mission"
+            data-offset="1000"
+            style={{ marginTop: "0", marginBottom: "40px" }}
+          >
+            <div className="up-about-page__mission__inner">
+              <h2 className="up-about-page__mission__title">
+                {/*  <span>Our Mission</span>
             Helping you and the environment*/}
-              <span></span>
-              The first Eco-Bankability score
-            </h2>
-            <div className="up-about-page__mission__grid">
-              <div className="up-about-page__mission__content">
-                <p>
-                  Built on a robust proprietary data engine driven by a complex
-                  library of algorithms that assess the risk of a sustainability
-                  project
-                </p>
-                <br />
-                <p>
-                  Manually calibrated against hundreds of publicly-rated
-                  property financings.
-                </p>
-                <br />
-                <p>Tested by heads of underwriting for leading lenders.</p>
-              </div>
-              <div className="up-about-page__mission__image">
-                {/*  <Img fluid={ourMission.childImageSharp.fluid} />*/}
-                <img
-                  src="/gif.PNG"
-                  alt="gif"
-                  style={{ height: "50%", objectFit: "fill" }}
-                />
-              </div>
-            </div>
-          </div>
-          <div id="our-story" />
-        </section>
+                <span></span>
+                The first Eco-Bankability score
+              </h2>
+              <div className="up-about-page__mission__grid align-center">
+                <div className="up-about-page__mission__content">
+                  <ul className="list">
+                    <li>
+                      Built on a robust proprietary data engine driven by a
+                      complex library of algorithms that assess the risk of a
+                      sustainability project.
+                    </li>
 
-        <section
-          className="up-about-page__story animate-container"
-          style={{ marginTop: "-20rem", marginBottom: "-10rem" }}
-        >
-          <div className="up-about-page__story__inner">
-            <h2 className="up-about-page__story__title transition-opacity">
-              {/*   <span>Our Story</span>
-            Where we came from  */}
-            </h2>
-            <div className="up-about-page__mission__grid transition-slide-in">
-              <div className="up-about-page__story__image">
-                {/* <Img fluid={ourStory.childImageSharp.fluid} />*/}
-                <img
-                  src="/tree.png"
-                  alt="tree"
-                  style={{ height: "60%", objectFit: "fill" }}
-                />
-              </div>
-              <div className="up-about-page__story__content">
-                <p>Piloted by the CT Green Bank.</p>
-                <br />
-                <p>
-                  Continuously tested and calibrated through Ratings
-                  Gamification app.
-                </p>
-                <br />
-                <p>Secured by comprehensive unit testing infrastructure.</p>
+                    <li>
+                      Manually calibrated against hundreds of publicly-rated
+                      property financings.
+                    </li>
+
+                    <li>
+                      Tested by heads of underwriting for leading lenders.
+                    </li>
+                  </ul>
+                </div>
+                <div className="up-about-page__mission__image">
+                  {/*  <Img fluid={ourMission.childImageSharp.fluid} />*/}
+                  <img
+                    src="/score.gif"
+                    alt="gif"
+                    style={{ height: "400px", objectFit: "cover" }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div id="our-products" />
-        </section>
+            <div id="our-story" />
+          </section>
+          <section
+            className="up-about-page__story animate-container "
+            style={{ marginTop: "0", marginBottom: "0" }}
+          >
+            <div
+              className="up-about-page__story__inner"
+              style={{ marginTop: "0", marginBottom: "0" }}
+            >
+              <div className="up-about-page__mission__grid transition-slide-in align-center">
+                <div className="up-about-page__story__image half-col">
+                  {/* <Img fluid={ourStory.childImageSharp.fluid} />*/}
+                  <img src="/score2.png" alt="tree" />
+                </div>
+                <div className="up-about-page__story__content">
+                  <ul className="list">
+                    <li>Piloted by the CT Green Bank.</li>
+
+                    <li>
+                      Continuously tested and calibrated through gamification
+                      features.
+                    </li>
+
+                    <li>
+                      Secured by comprehensive unit testing infrastructure.{" "}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="our-products" />
+          </section>
+        </div>
 
         <div>
           <LenderProductDisplay productFeatures={lenderProductFeatures} />
           <div id="contractor-product" />
-          <div className="mt1">
-           
-            <iframe
-              src="https://drive.google.com/file/d/1WBzRepg9FKFWsdzxiy09ZCpfYefpH5qe/preview"
-              width="1140"
-              height="680"
-              allow="autoplay"
-            ></iframe>
-          </div>
         </div>
 
-        <div
-          className="up-about-page__contractor-product"
-          style={{ marginBottom: "4rem" }}
-        >
-          <LenderProductDisplay
-            reverseLayout
-            productFeatures={contractorProductFeatures}
-          />
-
-          <div className="mt2">
-            <br />
-            <iframe
-              src="https://drive.google.com/file/d/14rxkBxa6s8NNgo7x5JCDOlS_WWsglsZe/preview"
-              width="1140"
-              height="680"
-              allow="autoplay"
-            ></iframe>
+        <div className="up-about-page__contractor-product v-sec">
+          <div className="bgData">
+            <LenderProductDisplay
+              reverseLayout
+              productFeatures={contractorProductFeatures}
+            />
           </div>
-          <br />
-          <br />
-          <br />
 
           {/*--------------------------- Slide 19 to 21 ---------------------------*/}
 
@@ -317,7 +310,7 @@ class AboutPage extends PureComponent {
 
                       <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
                         <button className="up-lender-product__nav__item__label">
-                          Manage your Portfolios
+                          Portfolio Manager’s Dashboard
                         </button>
                         <div
                           className="up-lender-product__nav__item__desc"
@@ -335,7 +328,199 @@ class AboutPage extends PureComponent {
                         <button
                           className="up-lender-product__actions__cta"
                           onClick={this.handleNextSection}
-                          style={{marginLeft:"0px", marginTop:"35px"}}
+                          style={{ marginLeft: "0px", marginTop: "35px" }}
+                        >
+                          Next:&nbsp;&nbsp;<strong>Projects</strong>
+                          <svg viewBox="0 0 477.175 477.175">
+                            <path d="M360.731 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="up-lender-product__screenshots">
+                      <div className="up-lender-product__screenshot up-lender-product__screenshot--active">
+                        <div class="up-browser-frame">
+                          <div className="row">
+                            <div className="column left">
+                              <span
+                                className="dot"
+                                style={{ backgroundColor: "rgb(237, 89, 74)" }}
+                              ></span>
+                              <span
+                                className="dot"
+                                style={{ backgroundColor: "rgb(253, 216, 0)" }}
+                              ></span>
+                              <span
+                                className="dot"
+                                style={{ backgroundColor: "rgb(90, 192, 90)" }}
+                              ></span>
+                            </div>
+                            <div className="column middle">
+                              <input
+                                disabled=""
+                                type="text"
+                                value="https://www.unety.io"
+                              />
+                            </div>
+                            <div className="column right">
+                              <div style={{ float: "right" }}>
+                                <span className="bar"></span>
+                                <span className="bar"></span>
+                                <span className="bar"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="content">
+                            <img src="/4.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => this.togglePopup()}
+                        className="videobuttons"
+                      >
+                        ▶&nbsp; <br /> Play Demo Video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                {/*------------ First Section ----------------*/}
+
+                {/*------------ Second Section ----------------*/}
+                <div
+                  className={`up-lender-product__track__item ${
+                    activeSection === 1
+                      ? "up-lender-product__track__item--active"
+                      : ""
+                  }`}
+                >
+                  <div className="up-lender-product__title up-lender-product__title--mobile">
+                    <span>Tools for Enterprises</span>Coordinate Properties
+                  </div>
+                  <div className="up-lender-product__grid">
+                    <div className="up-lender-product__nav">
+                      <div className="up-lender-product__title up-lender-product__title--desktop">
+                        <span>Tools for Enterprises</span>Coordinate Properties
+                      </div>
+                      <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
+                        <button className="up-lender-product__nav__item__label">
+                          Project Manager’s Dashboard
+                        </button>
+                        <div className="up-lender-product__nav__item__desc">
+                          Collaborate between teams or companies working on the
+                          ground to verify project viability on candidate
+                          properties.
+                        </div>
+                      </div>
+
+                      <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
+                        <div className="up-lender-product__nav__item__desc">
+                          Work together to manage local decision makers’
+                          expectations and close financings.
+                        </div>
+                      </div>
+                      <div className="up-lender-product__actions">
+                        <button
+                          className="up-lender-product__actions__cta"
+                          onClick={this.handleNextSection}
+                          style={{ marginLeft: "0px", marginTop: "50px" }}
+                        >
+                          Next:&nbsp;&nbsp;<strong>Transactions</strong>
+                          <svg viewBox="0 0 477.175 477.175">
+                            <path d="M360.731 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="up-lender-product__screenshots">
+                      <div className="up-lender-product__screenshot up-lender-product__screenshot--active">
+                        <div class="up-browser-frame">
+                          <div className="row">
+                            <div className="column left">
+                              <span
+                                className="dot"
+                                style={{ backgroundColor: "rgb(237, 89, 74)" }}
+                              ></span>
+                              <span
+                                className="dot"
+                                style={{ backgroundColor: "rgb(253, 216, 0)" }}
+                              ></span>
+                              <span
+                                className="dot"
+                                style={{ backgroundColor: "rgb(90, 192, 90)" }}
+                              ></span>
+                            </div>
+                            <div className="column middle">
+                              <input
+                                disabled=""
+                                type="text"
+                                value="https://www.unety.io"
+                              />
+                            </div>
+                            <div className="column right">
+                              <div style={{ float: "right" }}>
+                                <span className="bar"></span>
+                                <span className="bar"></span>
+                                <span className="bar"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="content">
+                            <img src="/5.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => this.togglePopup()}
+                        className="videobuttons"
+                      >
+                        ▶&nbsp;
+                        <br /> Play Demo Video
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                {/*------------ Second Section ----------------*/}
+
+                {/*------------ Third Section ----------------*/}
+                <div
+                  className={`up-lender-product__track__item ${
+                    activeSection === 2
+                      ? "up-lender-product__track__item--active"
+                      : ""
+                  }`}
+                >
+                  <div className="up-lender-product__title up-lender-product__title--mobile">
+                    <span>Tools for Enterprises</span> Execute Transactions
+                  </div>
+                  <div className="up-lender-product__grid">
+                    <div className="up-lender-product__nav">
+                      <div className="up-lender-product__title up-lender-product__title--desktop">
+                        <span>Tools for Enterprises</span>Execute Transactions
+                      </div>
+
+                      <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
+                        <button className="up-lender-product__nav__item__label">
+                          Transaction Manager’s Dashboard
+                        </button>
+                        <div
+                          className="up-lender-product__nav__item__desc"
+                          style={{ maxHeight: "100%" }}
+                        >
+                          Unety automates and democratizes brokerage of
+                          sustainability finance. Anyone can be their own broker
+                          and earn brokerage fees with the right tools and
+                          network. Existing brokers can dramatically improve
+                          productivity and performance with better tools and a
+                          larger network.
+                        </div>
+                      </div>
+
+                      <div className="up-lender-product__actions">
+                        <button
+                          className="up-lender-product__actions__cta"
+                          onClick={this.handleNextSection}
+                          style={{ marginLeft: "0px", marginTop: "0px" }}
                         >
                           Next:&nbsp;&nbsp;<strong>Portfolios</strong>
                           <svg viewBox="0 0 477.175 477.175">
@@ -378,166 +563,17 @@ class AboutPage extends PureComponent {
                             </div>
                           </div>
                           <div className="content">
-                            <img src="/1.png" alt="" />
+                            <img src="/6.png" alt="" />
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-                {/*------------ First Section ----------------*/}
-
-                {/*------------ Second Section ----------------*/}
-                <div
-                  className={`up-lender-product__track__item ${
-                    activeSection === 1
-                      ? "up-lender-product__track__item--active"
-                      : ""
-                  }`}
-                >
-                  <div className="up-lender-product__title up-lender-product__title--mobile">
-                    <span>Tools for Enterprises</span>Coordinate Properties
-                  </div>
-                  <div className="up-lender-product__grid">
-                    <div className="up-lender-product__nav">
-                      <div className="up-lender-product__title up-lender-product__title--desktop">
-                        <span>Tools for Enterprises</span>Coordinate Properties
-                      </div>
-                      <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
-                      <button className="up-lender-product__nav__item__label">
-                          Manage your Invetigate
-                        </button>
-                        <div className="up-lender-product__nav__item__desc">
-                          Collaborate between teams or companies working on the
-                          ground to verify project viability on candidate
-                          properties.
-                        </div>
-                      </div>
-                      
-                      <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
-                        <div className="up-lender-product__nav__item__desc">
-                          Work together to manage local decision makers’
-                          expectations and close financings.
-                        </div>
-                      </div>
-                      <div className="up-lender-product__actions">
-                        <button
-                          className="up-lender-product__actions__cta"
-                          onClick={this.handleNextSection}
-                          style={{marginLeft:"0px",marginTop:"50px"}}
-                        >
-                          Next:&nbsp;&nbsp;<strong>Projects</strong>
-                          <svg viewBox="0 0 477.175 477.175">
-                            <path d="M360.731 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"></path>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div className="up-lender-product__screenshots">
-                    <div className="up-lender-product__screenshot up-lender-product__screenshot--active">
-                      <div class="up-browser-frame">
-                        <div className="row">
-                          <div className="column left">
-                            <span
-                              className="dot"
-                              style={{ backgroundColor: "rgb(237, 89, 74)" }}
-                            ></span>
-                            <span
-                              className="dot"
-                              style={{ backgroundColor: "rgb(253, 216, 0)" }}
-                            ></span>
-                            <span
-                              className="dot"
-                              style={{ backgroundColor: "rgb(90, 192, 90)" }}
-                            ></span>
-                          </div>
-                          <div className="column middle">
-                            <input
-                              disabled=""
-                              type="text"
-                              value="https://www.unety.io"
-                            />
-                          </div>
-                          <div className="column right">
-                            <div style={{ float: "right" }}>
-                              <span className="bar"></span>
-                              <span className="bar"></span>
-                              <span className="bar"></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="content">
-                          <img src="/2.png" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-                {/*------------ Second Section ----------------*/}
-
-                {/*------------ Third Section ----------------*/}
-                <div
-                  className={`up-lender-product__track__item ${
-                    activeSection === 2
-                      ? "up-lender-product__track__item--active"
-                      : ""
-                  }`}
-                >
-                  <div className="up-lender-product__title up-lender-product__title--mobile">
-                    <span>Tools for Enterprises</span> Execute Transactions
-                  </div>
-                  <div className="up-lender-product__grid">
-                    <div className="up-lender-product__nav">
-                      <div className="up-lender-product__title up-lender-product__title--desktop">
-                        <span>Tools for Enterprises</span>Execute Transactions
-                      </div>
-
-                      <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
-                      <button className="up-lender-product__nav__item__label">
-                          Manage your Deals
-                        </button>
-                        <div
-                          className="up-lender-product__nav__item__desc"
-                          style={{ maxHeight: "100%"}}
-                        >
-                          Unety automates and democratizes brokerage of
-                          sustainability finance.
-                        </div>
-                      </div>
-
-                      <div className="up-lender-product__nav__item up-lender-product__nav__item--active">
-                        <div
-                          className="up-lender-product__nav__item__desc"
-                          style={{ maxHeight: "100%", marginTop:"-20px"}}
-                        >
-                          Anyone can be their own broker and earn brokerage fees
-                          with the right tools and network. Existing brokers can
-                          dramatically improve productivity and performance with
-                          better tools and a larger network.
-                        </div>
-                      </div>
-                      <div className="up-lender-product__actions">
-                        <button
-                          className="up-lender-product__actions__cta"
-                          onClick={this.handleNextSection}
-                          style={{marginLeft:"0px",marginTop:"0px"}}
-                        >
-                          Next:&nbsp;&nbsp;<strong>Transactions</strong>
-                          <svg viewBox="0 0 477.175 477.175">
-                            <path d="M360.731 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"></path>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div className="up-lender-product__screenshots">
-                      <div className="up-lender-product__screenshot up-lender-product__screenshot--active">
-                        <div class="up-browser-frame">
-                          <div className="content">
-                            <img src="/3.png" alt="" />
-                          </div>
-                        </div>
-                      </div>
+                      <button
+                        onClick={() => this.togglePopup()}
+                        className="videobuttonss"
+                      >
+                        ▶&nbsp;
+                        <br /> Play Demo Video
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -546,17 +582,33 @@ class AboutPage extends PureComponent {
             </div>
           </div>
 
+          {this.state.showPopup && (
+            <div className="popup">
+              <div className="popup-inner">
+                <button
+                  className="close-btn"
+                  onClick={() => this.togglePopup()}
+                >
+                  X
+                </button>
+                {/*  <iframe
+                  src="https://drive.google.com/file/d/1knc0GILg_916_E2vQk_WlgV_DTjYkK7L/preview"
+                  width="1140"
+                  height="680"
+                  allow="autoplay"
+                ></iframe> */}
+                <iframe
+                  src="https://drive.google.com/file/d/1auN7iOMhDJkLk0blxoYsPg7yvauH9mHS/preview"
+                  width="1140"
+                  height="680"
+                  allow="autoplay"
+                ></iframe>
+              </div>
+            </div>
+          )}
           {/*--------------------------- Second Section ---------------------------*/}
           {/*--------------------------- Slide 19 to 21 ---------------------------*/}
           <div id="meet-the-team" />
-          <div className="mt3">
-            <iframe
-              src="https://drive.google.com/file/d/1knc0GILg_916_E2vQk_WlgV_DTjYkK7L/preview"
-              width="1140"
-              height="680"
-              allow="autoplay"
-            ></iframe>
-          </div>
         </div>
 
         {/* <section className="up-about-page__team">

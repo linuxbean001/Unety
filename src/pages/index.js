@@ -65,7 +65,6 @@ class Homepage extends PureComponent {
       return acc;
     }, {});
     articles.list = articles.pace
-    console.log("fgfgsdfgsfgf",articles)
     const icons = projectTypesIcons.reduce((acc, { node: { name, childImageSharp } }) => {
       acc[name] = childImageSharp.fluid;
       return acc;
@@ -180,10 +179,21 @@ class Homepage extends PureComponent {
         </section>
 
         {/*------------- Article Section ----------------*/}
-        <section className="up-logo-list1">
-        {Array.isArray(articles.list) && articles.list.length > 0 && (
-          <ArticleList {...articles} subTitle="Articles" title="Take a deeper dive into PACE"/>
-        )}
+        <section className="case-study">
+        <div className="blocks pt-80">
+        <h2 className="up-logo-list__title mb-50">
+       <div className='fontd '>Case Study – ThinkBox & Vesta</div>
+        <span>Vesta Corp. needed $30mm of funding for a portfolio of 14 projects in 14
+        cities being developed by ThinkBox. ThinkBox used Unety to help Vesta source, compare,
+        understand, and decide on funding options – all delivered in 48 hours.</span>
+        </h2>
+
+        <img src="/case-study.jpg"/>
+ 
+        
+        </div>
+        
+        
         </section>
         {/*------------- Article Section ----------------*/}
 

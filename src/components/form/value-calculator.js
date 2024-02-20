@@ -55,6 +55,7 @@ class ValueCalculator extends PureComponent {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
   handleFieldChange(field, value) {
     this.setState(() => ({
       [field]: value
@@ -75,7 +76,7 @@ class ValueCalculator extends PureComponent {
       monthlyEnergyCost
     } = this.state;
     const _sqft = sqft && parseInt(sqft.replace(/,/g, ''), 10);
-    const resp = await axios.post('/.netlify/functions/value-calculator', {
+    const resp = await axios.post('https://cors-anywhere.herokuapp.com/https://unety.io/.netlify/functions/value-calculator', {
       buildingOwner,
       propertyType: propertyType && propertyType.value,
       leaseTerm: leaseTerm && leaseTerm.value,
@@ -289,14 +290,14 @@ class ValueCalculator extends PureComponent {
                   {hasResults ? 'Dont Wait!' : 'Contact a contractor to learn more'}
 
                 </div>
-               {/* <a
+                <a
                   className="up-value-calculator__results__cta"
-                  href="https://app.unety.io/requestdemo"
+                  href="/requestdemo"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Get Demo
-                </a>  */}
+                </a> 
               </div>
             </div>
         </div>
