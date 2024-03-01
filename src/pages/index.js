@@ -97,7 +97,7 @@ class Homepage extends PureComponent {
                   <h1>
                     {/*<span className="transition-opacity">Resources for engineers to</span>
                     <span className="transition-opacity">always land project financing</span>*/}
-                    <span className="transition-opacity">Your bridge between-3 </span>
+                    <span className="transition-opacity">Your bridge between-4 </span>
                     <span className="transition-opacity">sustainability and finance</span>
                   </h1>
                   <div className="up-homepage__hero__right-bracket" />
