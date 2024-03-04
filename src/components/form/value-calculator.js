@@ -76,7 +76,7 @@ class ValueCalculator extends PureComponent {
       monthlyEnergyCost
     } = this.state;
     const _sqft = sqft && parseInt(sqft.replace(/,/g, ''), 10);
-    const resp = await axios.post('https://cors-anywhere.herokuapp.com/https://unety.io/.netlify/functions/value-calculator', {
+    const resp = await axios.post('https://unety.io/.netlify/functions/value-calculator', {
       buildingOwner,
       propertyType: propertyType && propertyType.value,
       leaseTerm: leaseTerm && leaseTerm.value,
